@@ -19,7 +19,7 @@ export default function RouterPage() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row">
+    <div className="flex flex-col lg:flex-row min-h-full">
       {/* Sidebar for large screens */}
       <div className="w-64 min-h-screen text-green-950 bg-[#D2B48D] py-12 hidden lg:block">
         <ul className="menu p-4">
@@ -73,6 +73,11 @@ export default function RouterPage() {
             <li>
             <Link href="/dashboard/add-product">
               <FaShoppingCart /> Add products
+            </Link>
+          </li>
+          <li>
+            <Link href="/dashboard/product-management">
+            <MdManageAccounts /> Manage products
             </Link>
           </li>
           <li>

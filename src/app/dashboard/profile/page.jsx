@@ -13,7 +13,7 @@ export default function Profile() {
     
         <div className="absolute top-32 left-1/2 transform -translate-x-1/2 bg-[#F8EDDF] p-2 rounded-full shadow-lg">
           <Image
-            src={user?.photoURL || '/default-profile.png'} // fallback image if missing
+            src={user?.photoURL || '/default-profile.png'} 
             alt={user?.displayName || "User"}
             width={128}
             height={128}

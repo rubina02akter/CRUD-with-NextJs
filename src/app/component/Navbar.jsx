@@ -105,7 +105,7 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.3 }}
-            className="fixed top-0 right-0 h-full w-1/2 md:w-1/2 bg-black bg-opacity-45 backdrop-blur-md text-white shadow-lg z-50 lg:hidden"
+            className="fixed top-0 right-0 h-full w-1/2 md:w-1/2 bg-[#122823] bg-opacity-45 backdrop-blur-md text-white shadow-lg z-50 lg:hidden"
           >
             <div className="flex justify-between items-center p-4 border-b">
               <span className="text-xl font-bold"></span>
