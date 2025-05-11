@@ -1,6 +1,7 @@
 'use client';
 import axios from "axios";
 import Image from "next/image";
+import Link from "next/link";
 // import Link from "next/link";
 import { useState,useEffect } from "react";
 
@@ -29,27 +30,28 @@ export default function allProducts() {
   //   .then((res)=>console.log(res.data))
   //   .catch((e)=>console.log(e.message))
 
-  // }
+  // } className='grid grid-cols-4 gap-4 w-11/12 mx-auto'
 
 
 
   return (
     <div>
-      <h2>All Products</h2>
-      <div>
+     <div className='grid grid-cols-4 gap-4 w-11/12 mx-auto'>
         {
           data.map(card=>(
-            <>
-            <p>{card.title}</p>
-            <Image src={card.photo} alt='image' width={300} height={300} />
-            {/* <button
-            onClick={()=>handleDelete(card._id)}
-             className='btn'>Delete</button>
-            <Link href='/' className='btn'>Update</Link> */}
-            </>
+            <div>
+          
+            <Image
+            className='rounded-3xl h-[200px]'
+             src={card.photo} alt='image' width={300} height={300} />
+               <p className='font-extrabold text-xl'>{card.title}</p>
+               <Link href={`/all-products/${card._id}`} className='btn bg-[#122823] text-white hover:bg-[#F8EDDF] hover:text-[#122823]'>View details</Link>
+          
+            </div>
           ))
         }
       </div>
-    </div>
+      </div>
+
   )
 }

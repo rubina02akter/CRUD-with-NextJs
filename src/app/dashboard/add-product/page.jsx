@@ -2,6 +2,7 @@
 
 import axios from "axios";
 
+
 export default function addProduct() {
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,9 +20,10 @@ export default function addProduct() {
   
   
     axios
-      .post("https://crud-operation-with-next-js.vercel.app/api/products", data)
+      .post("http://localhost:3000/api/products", data)
       .then((res) => console.log(res.data))
       .catch((e) => console.error("error:", e.message));
+      
   };
   
   return (
