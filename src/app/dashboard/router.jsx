@@ -20,7 +20,7 @@ export default function RouterPage() {
   return (
     <div className="flex flex-col lg:flex-row">
       {/* Sidebar for large screens */}
-      <div className="w-64 min-h-screen text-green-950 bg-[#c2b3a3] py-12 hidden lg:block">
+      <div className="w-64 min-h-screen text-green-950 bg-[#D2B48D] py-12 hidden lg:block">
         <ul className="menu p-4">
           <li>
             <Link href="/dashboard/profile">
