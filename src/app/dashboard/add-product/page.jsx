@@ -19,7 +19,7 @@ export default function addProduct() {
   
   
     axios
-      .post("http://localhost:3000/api/products", data)
+      .post("https://crud-operation-with-next-js.vercel.app/api/products", data)
       .then((res) => console.log(res.data))
       .catch((e) => console.error("error:", e.message));
   };

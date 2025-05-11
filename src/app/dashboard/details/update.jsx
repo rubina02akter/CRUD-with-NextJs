@@ -16,12 +16,11 @@ export default function Update({ result }) {
     const dateOnly = time.toISOString().split('T')[0];
     const user = form.user.value;
     const details = form.details.value;
-  
     const data = { title, description, category, photo, dateOnly, user, details };
   
   
     await axios
-    .put(`http://localhost:3000/api/products/${id}`, data)
+    .put(`https://crud-operation-with-next-js.vercel.app/api/products/${id}`, data)
     .then((res) => console.log(res.data))
     .catch((e) => console.log(e.message));
   };

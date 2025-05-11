@@ -13,7 +13,7 @@ export default function Management() {
 
   useEffect(()=>{
    axios
-   .get('http://localhost:3000/api/products')
+   .get('https://crud-operation-with-next-js.vercel.app/api/products')
    .then(res=>setData(res.data))
    .catch(e=>console.log(e))
   },[axios,setData])
@@ -25,7 +25,7 @@ export default function Management() {
   const handleDelete = async(id) => {
 
    await axios
-    .delete(`http://localhost:3000/api/products/${id}`)
+    .delete(`https://crud-operation-with-next-js.vercel.app/api/products/${id}`)
     .then((res)=>console.log(res.data))
     .catch((e)=>console.log(e.message))
 
