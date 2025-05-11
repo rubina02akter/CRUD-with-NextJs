@@ -9,6 +9,7 @@ import {
   FaCircle,
   FaHome,
 } from "react-icons/fa";
+import { MdManageAccounts } from "react-icons/md";
 
 export default function RouterPage() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -30,6 +31,11 @@ export default function RouterPage() {
           <li>
             <Link href="/dashboard/add-product">
               <FaShoppingCart /> Add products
+            </Link>
+          </li>
+          <li>
+            <Link href="/dashboard/product-management">
+            <MdManageAccounts /> Manage products
             </Link>
           </li>
           <li>

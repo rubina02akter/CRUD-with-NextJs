@@ -1,12 +1,12 @@
 'use client';
 import axios from "axios";
 import Image from "next/image";
-// import Link from "next/link";
+import Link from "next/link";
 import { useState,useEffect } from "react";
 
 
 
-export default function allProducts() {
+export default function Management() {
   const [data,setData] = useState([]);
 
   //get data ...........
@@ -22,14 +22,14 @@ export default function allProducts() {
 
 
   //delete functionality.........
-  // const handleDelete = async(id) => {
+  const handleDelete = async(id) => {
 
-  //  await axios
-  //   .delete(`http://localhost:3000/api/products/${id}`)
-  //   .then((res)=>console.log(res.data))
-  //   .catch((e)=>console.log(e.message))
+   await axios
+    .delete(`http://localhost:3000/api/products/${id}`)
+    .then((res)=>console.log(res.data))
+    .catch((e)=>console.log(e.message))
 
-  // }
+  }
 
 
 
@@ -42,10 +42,10 @@ export default function allProducts() {
             <>
             <p>{card.title}</p>
             <Image src={card.photo} alt='image' width={300} height={300} />
-            {/* <button
+            <button
             onClick={()=>handleDelete(card._id)}
              className='btn'>Delete</button>
-            <Link href='/' className='btn'>Update</Link> */}
+            <Link href={`/dashboard/details/${card._id} `}className='btn'>Update</Link>
             </>
           ))
         }

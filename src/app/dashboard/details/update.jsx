@@ -2,8 +2,10 @@
 
 import axios from "axios";
 
-export default function addProduct() {
-  const handleSubmit = async (e) => {
+export default function Update({ result }) {
+  const id = result._id;
+
+  const handleUpdate = async (e) => {
     e.preventDefault();
     const form = e.target;
     const title = form.title.value;
@@ -18,17 +20,17 @@ export default function addProduct() {
     const data = { title, description, category, photo, dateOnly, user, details };
   
   
-    axios
-      .post("http://localhost:3000/api/products", data)
-      .then((res) => console.log(res.data))
-      .catch((e) => console.error("error:", e.message));
+    await axios
+    .put(`http://localhost:3000/api/products/${id}`, data)
+    .then((res) => console.log(res.data))
+    .catch((e) => console.log(e.message));
   };
   
   return (
     <div>
        <div className=" p-24">
       <h2 className="text-3xl font-extrabold">Add Product</h2>
-      <form className="space-y-8" onSubmit={handleSubmit}>
+      <form className="space-y-8" onSubmit={handleUpdate}>
         {/* form name and quantity row */}
         <div className="md:flex gap-4">
           <div className="form-control md:w-1/2">
@@ -41,6 +43,8 @@ export default function addProduct() {
                 name="title"
                 placeholder="add product title"
                 className="input input-bordered w-full"
+                defaultValue={result.title}
+
               />
             </label>
           </div>
@@ -55,6 +59,7 @@ export default function addProduct() {
                 name="description"
                 placeholder="description"
                 className="input input-bordered w-full"
+                defaultValue={result.description}
               />
             </label>
           </div>
@@ -73,6 +78,7 @@ export default function addProduct() {
                 name="category"
                 placeholder="category"
                 className="input input-bordered w-full"
+                defaultValue={result.category}
               />
             </label>
           </div>
@@ -89,6 +95,7 @@ export default function addProduct() {
                 name="user"
                 placeholder="user name"
                 className="input input-bordered w-full"
+                defaultValue={result.user}
               />
             </label>
           </div>
@@ -103,6 +110,7 @@ export default function addProduct() {
                 name="details"
                 placeholder="email"
                 className="input input-bordered w-full"
+                defaultValue={result.details}
               />
             </label>
           </div>
@@ -119,12 +127,15 @@ export default function addProduct() {
                 name="photo"
                 placeholder="Send Img URL (ONLY img bb) URL"
                 className="input input-bordered w-full"
+                defaultValue={result.photo}
               />
             </label>
           </div>
         </div>
 
-        <input type="submit" value="Add product" className="btn btn-block bg-[#D2B48C] "/>
+        <button  type="submit" placeholder="Update product" className="btn btn-block bg-[#D2B48C] ">
+          Update product
+        </button>
       </form>
     </div>
     </div>
