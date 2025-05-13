@@ -14,7 +14,7 @@ export default function allProducts() {
 
   useEffect(()=>{
    axios
-   .get('https://crud-operation-with-next-js.vercel.app/api/products')
+   .get('http://localhost:3000/api/products')
    .then(res=>setData(res.data))
    .catch(e=>console.log(e))
   },[axios,setData])
