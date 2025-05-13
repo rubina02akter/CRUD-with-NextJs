@@ -14,7 +14,7 @@ export default function allProducts() {
 
   useEffect(()=>{
    axios
-   .get('http://localhost:3000/api/products')
+   .get('/api/products')
    .then(res=>setData(res.data))
    .catch(e=>console.log(e))
   },[axios,setData])

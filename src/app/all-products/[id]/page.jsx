@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default async function ProductPage({ params }) {
   const { id } = params;
-  const data = await fetch("https://crud-operation-with-next-js.vercel.app/api/products");
+  const data = await fetch("/api/products");
   const result = await data.json();
   const productInfo = result.find((item) => item._id === id);
 
