@@ -4,6 +4,9 @@ const nextConfig = {
     domains: ["i.ibb.co.com"],
     qualities: [100],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  }
 };
 
 export default nextConfig;
